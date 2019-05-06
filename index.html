@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">##</span><br/>
+			<span class="comments"># Life is a interesting gift.</span><br/>
+			<span class="comments"># And this is a zone to thanks life and to celebrate our 100 days milestone.</span><br/>
+			<span class="comments">##</span><br/>
+			i = Boy(<span class="string">"Shaoqing Qi"</span>);<br/>
+			u = Girl(<span class="string">"Meng Zhang"</span>);<br/>
+			<span class="comments"># Dec 26, 2018, we became legal couples. </span><br/>
+			marry(u, i)<br/>
+			<span class="comments"># Beforewards, we confessed to each other without any words. </span><br/>
+			confess(u, i)<br/>
+			<span class="comments"># Since the first day, we spent a memorable life with countless happy moments.</span><br/>
+			life(u, i)<br/>
+			<span class="comments"># We have experienced a lot together, and there were absolutely many difficulties.</span><br/>
+			difficult(u, i, sometimes=<span class="keyword">True</span>)<br/>
+			if i.be_together_with() == u:<br/>
+			  difficults = Piece of cake<br/>
+			<span class="comments"># We enjoy studying together in library.</span><br/>
+			study(u, i)<br/>
+			<span class="comments"># We enjoy cuisine together outside the school.</span><br/>
+			dine(u, i)<br/>
+			<span class="comments"># We enjoy appointment together.</span><br/>
+			appoint(u, i)<br/>
+			<span class="comments"># We enjoy vacation together.</span><br/>
+			vacation(u, i)<br/>
+			<span class="comments"># We enjoy entertainment together.</span><br/>
+			entertainment(u, i)<br/>
+			<span class="comments"># We enjoy living together...</span><br/>
+			live(u, i) <br/>
+			<span class="comments"># You are the greatest love of my life.</span><br/>
+			while <span class="keyword">True</span>:<br/>
+			<span class="placeholder"></span><span class="keyword">if</span> u.with(i):<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>you = everything<br/>
+			<span class="placeholder"></span><span class="keyword">else</span>:<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>everything = u<br/>
+			<span class="comments"># We are and will continue being the happiest couple in the world</span><br/>			
+                        i.can_not_live_without(u)<br/>
+			<span class="comments"># You are my light in the darkness forever.</span><br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					We have been in marriage for
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love u always and forever.<br/>
+					<div class="signature">-   Shaoqing Qi</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		Copyright ? 2019 <a href='http://qishaoqing.xyz'>qishaoqing.xyz</a> 2018-2019
+	</div>
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	together.setFullYear(2018, 12, 26);
+	together.setHours(15);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
